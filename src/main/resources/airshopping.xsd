@@ -1,0 +1,44 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://aeconnect.com/airshopping/aeconnect/"
+           targetNamespace="http://aeconnect.com/airshopping/aeconnect/"
+           elementFormDefault="qualified">
+
+    <xs:element name="AirShoppingRQ">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PointOfSale" type="tns:POS"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+        <xs:complexType name="POS">
+            <xs:sequence>
+                <xs:element name="location" type="tns:loc"></xs:element>
+                <xs:element name="augmentationPoint" type="tns:augpoint"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="loc">
+            <xs:sequence>
+                <xs:element name="countrycode" type="xs:string"></xs:element>
+                <xs:element name="citycode" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="augpoint">
+            <xs:sequence>
+                <xs:element name="AugPoint" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+
+        <xs:complexType name="response">
+            <xs:sequence>
+                <xs:element name="airlinename" type="xs:string"></xs:element>
+                <xs:element name="airlineId" type="xs:int"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+</xs:schema>
+
+
